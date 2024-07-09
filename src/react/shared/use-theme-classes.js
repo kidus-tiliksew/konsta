@@ -1,5 +1,3 @@
-import { useContext } from 'react';
-import { KonstaContext } from './KonstaContext.js';
 import { cls } from '../../shared/cls.js';
 
 const propClasses = (classesObj, theme, state) => {
@@ -44,8 +42,7 @@ const themeClasses = (classesObj, theme, addBaseClassName) => {
 };
 
 const useThemeClasses = ({ ios, material } = {}) => {
-  const context = useContext(KonstaContext);
-  let theme = context.theme || 'ios';
+  let theme = 'material';
   if (ios) theme = 'ios';
   if (material) theme = 'material';
   return (classesObj, addBaseClassName) =>
